@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tienda el Caimo</h1>
+    <!-- Aquí se crea el formulario con sus respectivos elementos, poniendo su respectivo maximo de cada producto, para que el usuario no saque más del inventario requerido -->
+    <form id="formulario"> 
+        <label for="huevos">Huevos</label>  <input name="cantidadhuevos" id="cantihuevos" type="number" min=1 max=30> <br>
+        <label for="leche">Leche</label> <input name="cantidadleche" id="cantileche" type="number" min=1 max=20><br>
+        <label for="pan">Pan</label> <input name="cantidadpan" id="cantipan" type="number" min=1 max=50 ><br>
+        <label for="fruta">Fruta</label> <input name="cantidadfruta" id="cantifruta" type="number" min=1 max=50><br>
+        <br>
+        <button type="submit" id="boton2" >Enviar</button>
+        <input type="reset" value="Borrar" class="button">
+    </form>
+    <!-- Se crean los elementos para el boton que crea descuentos -->
+    <button id="boton" >Presiona aquí para ganar un descuento</button>
+    <p id="Totalpay"></p>
+    <p id="ladescuento"></p>
+    <script src="js/codigo.js"></script>
+</body>
+</html>
