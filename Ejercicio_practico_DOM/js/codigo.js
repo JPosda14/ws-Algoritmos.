@@ -43,6 +43,7 @@ form.addEventListener("submit",conservar=(e)=>{ e.preventDefault();
         for (let i = 0; i < 4; i++) {
         valortal[i]=parseInt(arrecant[i]*valores[i]);
         }
+        
         for (let i = 0; i < 4; i++) {
         sumarreglo+=resultadopago[i];               
         } 
