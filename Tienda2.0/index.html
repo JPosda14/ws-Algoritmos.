@@ -10,19 +10,22 @@ eliminar un producto
 listar los productos en orden alfabético -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tiendita</title>
     <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
+
 <body>
     <!-- Navegadpr -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <a href="/" class="navbar-brand">
-    Inventario
+            Inventario
         </a>
     </nav>
 
@@ -34,26 +37,42 @@ listar los productos en orden alfabético -->
                     <div class="card-header">
                         <h4>Agregar producto</h4>
                     </div>
-                    <form id="formulario" class="card-body">
-                        <div class="form-group">
-                             <input type="text" id="nombre" placeholder="Nombre del producto">
-                        </div>
-                            <div class="form-group">
-                                 <input type="number" step="0.1" id="precio" placeholder="Precio del producto">
-                            </div>
-                                <div  class="form-group">
-                                    <input type="number" step="0.1" id="Cantidad" placeholder="Cantidad del producto">
-                                </div>
-                             <div class="form-group">
-                                        <input type="text" id="categoría" placeholder="Categoría del producto">
-                             </div>
-                            <input type="submit" id="Guardar" value="Save" class="btn btn-primary">
-                    </form>
-                 </div>  
-             </div>
-             <div id="listapro" class="col-md-8"></div>
-         </div>
+                    <div class="form-group">
+                        <input type="text" id="nombre" placeholder="Nombre del producto">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" step="0.1" id="precio" placeholder="Precio del producto">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" step="0.1" id="cantidad" placeholder="Cantidad del producto">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="categoria" placeholder="Categoría del producto">
+                    </div>
+                    <br>
+                    <button id="inicio" class="btn btn-primary"> Guardar inicial</button>
+                    <br>
+                    <button id="final" class="btn btn-info disabled"> Guardar final</button>
+                    <br>
+                    <button id="cuanto" class="btn btn-secondary"> Productos por categoria</button>
+                    <br>
+                    <button id="cantidad" class="btn btn-success">Cantidad total de Productos </button>
+                    <br>
+                    <button id="eliexistencias" class="btn btn-outline-danger"> Eliminar existencias de productos</button>
+                    <br>
+                    <button id="agrexistencias" class="btn btn-secondary disabled"> Agregar existencias de productos</button>
+                    <br>
+                    <button id="buscar" class="btn btn-outline-dark"> Buscar productos</button>
+                    <br>
+                    <button id="eliminarpro" class="btn btn-danger"> Eliminar producto</button>
+                    <br>
+                    <button id="ordenarpro" class="btn btn-dark"> Ordenar por alfabeto producto</button>
+                </div>
+            </div>
+            <div id="listapro" class="col-md-8"></div>
+        </div>
     </div>
-<script src="js/tiendasi.js"></script>
+    <script src="js/tiendasi.js"></script>
 </body>
-</html> 
+
+</html>
