@@ -1,6 +1,6 @@
 //llamada de element
 const ginicio = document.getElementById('inicio');
-const gfinal = document.getElementById('final');
+const gfinal = document.getElementById('fin');
 const cuant = document.getElementById('cuanto');
 const cantotal = document.getElementById('cantidadt');
 const minexis = document.getElementById('eliexistencias');
@@ -16,20 +16,29 @@ ginicio.addEventListener('click', proi);
 gfinal.addEventListener('click', addprodct);
 gfinal.addEventListener('click', prof);
 
+cuant.addEventListener('click', crearray);
 cuant.addEventListener('click', infocuanto);
-cuant.addEventListener('click', addprodct);
+
+cantotal.addEventListener('click', crearray);
 cantotal.addEventListener('click', infocantotal);
-cantotal.addEventListener('click', addprodct);
+
+minexis.addEventListener('click', crearray);
 minexis.addEventListener('click', menexis);
-minexis.addEventListener('click', addprodct);
+
+aumexis.addEventListener('click', crearray);
 aumexis.addEventListener('click', auexis);
-aumexis.addEventListener('click', addprodct);
+
+buscp.addEventListener('click', crearray);
 buscp.addEventListener('click', searchp);
-buscp.addEventListener('click', addprodct);
+
+elimp.addEventListener('click', crearray);
 elimp.addEventListener('click', eliminp);
-elimp.addEventListener('click', addprodct);
+
+ordp.addEventListener('click', crearray);
 ordp.addEventListener('click', ordenp);
-ordp.addEventListener('click', addprodct);
+
+
+
 
 
 function addprodct() {
@@ -64,11 +73,11 @@ function infocuanto() {
     let htmcat= document.getElementById('procate')
     let string = "";
     let promcat = (prompt('Escriba la categoria que quiere ver'))
-    let catep = larosadgp.filter(products => products.categoria == promcat)
+    let catep = larosadgp.filter(producto => producto.cat == promcat)
     console.log(catep)
     console.log(larosadgp[0]['cat'])
-    string= string + `En la categoria ${catep} hay ${catep.length} productos`
-    for (let i = 0; i < productocat.length; i++) {
+    string= string + `En la categoria ${promcat} hay ${catep.length} productos`
+    for (let i = 0; i < catep.length; i++) {
         string=string+ ` <br>${i+1}) ${catep[i]["nom"]} `
         
     }
@@ -80,7 +89,7 @@ function infocuanto() {
 function infocantotal() {
     let string=""
     let totalp= document.getElementById('totalp')
-    string = `En la tienda actualmente hay ${larosadgp.length} productos`
+    string = `En la tienda hay ${larosadgp.length} productos`
     console.log(larosadgp.length)
     for (let i = 0; i < larosadgp.length; i++) {
         string=string+ `<br>${i+1}) ${larosadgp[i]["nom"]}`
@@ -93,12 +102,12 @@ function menexis() {
     let promen = prompt('digite el nombre del producto a disminuir su cantidad')
     let noex
 
-    for (let i = 0; i < arreglo_productos.length; i++) {
-        let condicion = arreglo_productos[i]['nomb'].includes(pregunta)
+    for (let i = 0; i < larosadgp.length; i++) {
+        let condicion = larosadgp[i]['nom'].includes(promen)
         if (condicion) {
             if (larosadgp[i]['nom'] == promen) {
-                let discanti = prompt('ingrese la cantidad a disminuir de la cantidad')
-                larosadgp[i]['canti']=larosadgp[i]['canti']-discanti
+                let discanti = prompt('ingrese cuanto va disminuir del producto')
+                larosadgp[i]['can']=larosadgp[i]['can']-discanti
                 eliexis.innerHTML=`Ahora la cantidad de ${promen} es de ${larosadgp[i]['can']} unidades <br>`
                 noex='hola';
                 break;
@@ -123,11 +132,11 @@ function auexis() {
     let noex
 
     for (let i = 0; i < larosadgp.length; i++) {
-        let condicion = larosadgp[i]['nomb'].includes(proma) 
+        let condicion = larosadgp[i]['nom'].includes(proma) 
         if (condicion) {
             if (larosadgp[i]['nom'] == proma) {
-                let discanti = prompt('ingrese la cantidad a aumentar de la cantidad')
-                larosadgp[i]['canti']=parseInt(larosadgp[i]['can'])+ parseInt(discanti)
+                let discanti = prompt('Cuanto va aumentar del producto')
+                larosadgp[i]['can']=parseInt(larosadgp[i]['can'])+ parseInt(discanti)
                 aexis.innerHTML=`Ahora la cantidad de ${proma} es de ${larosadgp[i]['can']} unidades <br>`
                 noex=false;
                 break;
@@ -155,7 +164,7 @@ function searchp() {
     for (let i = 0; i < larosadgp.length; i++) {
         let condicion = larosadgp[i]['nom'].includes(promb)
         if (condicion) {
-            if (larosadgp[i]['nom'] == pregunta) {  
+            if (larosadgp[i]['nom'] == promb) {  
                 sear.innerHTML=`El producto ${larosadgp[i]['nom']} tiene: <br> Categoria ${larosadgp[i]['cat']}  <br> Precio ${larosadgp[i]['pric']}  <br>Cantidad ${larosadgp[i]['can']}  <br>`
                 noex=false;
                 break;
@@ -179,7 +188,7 @@ function eliminp() {
         if (condicion) {
             if (larosadgp[i]['nom'] == prome) {
                 larosadgp.splice(i,1)
-                elim.innerHTML=`El producto ${pregunta} esta eliminao`
+                elim.innerHTML=`El producto ${prome} esta eliminao`
                 console.log(larosadgp)
                 noex=false;
                 break;
