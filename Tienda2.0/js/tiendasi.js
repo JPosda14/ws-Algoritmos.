@@ -11,6 +11,7 @@ const ordp= document.getElementById('ordenarpro')
 
 let products = [];
 let option
+
 ginicio.addEventListener('click', addprodct);
 ginicio.addEventListener('click', proi);
 gfinal.addEventListener('click', addprodct);
@@ -98,27 +99,18 @@ function infocantotal() {
 }
 // Disminuir existencias de un producto
 function menexis() {
+    larosadgp=JSON.parse(localStorage.products)
+
     let eliexis = document.getElementById('eliexis')
     let promen = prompt('digite el nombre del producto a disminuir su cantidad')
-    let noex
-
-    for (let i = 0; i < larosadgp.length; i++) {
-        let condicion = larosadgp[i]['nom'].includes(promen)
-        if (condicion) {
-            if (larosadgp[i]['nom'] == promen) {
-                let discanti = prompt('ingrese cuanto va disminuir del producto')
-                larosadgp[i]['can']=larosadgp[i]['can']-discanti
-                eliexis.innerHTML=`Ahora la cantidad de ${promen} es de ${larosadgp[i]['can']} unidades <br>`
-                noex='hola';
-                break;
-            }
-        } else {
-            noex="No existe"
-        }
-    }
-    if (noex=="No existe") {
-        eliexis.innerHTML=`El producto a buscar no esta en la lista de productos <br>`
-    }
+    let findd= larosadgp.find(elemett => elemett.nom == promen)
+    if (findd==undefined) {
+        eliexis.innerHTML=`<br> El producto no esta en la lista de productos`
+    } else{
+        let menenexis=parseInt(prompt('ingrese la cantidad que quiere disminuir'))
+        findd.can=parseInt(findd.can)-parseInt(menenexis)
+        eliexis.innerHTML=`<br> La cantidad de ${promen} es de ${findd.can} unidades `
+   }
     products=larosadgp
     console.log(products)
     localStorage.products = JSON.stringify(products)
@@ -127,28 +119,19 @@ function menexis() {
 
 // Aumentar existencias de un producto
 function auexis() {
+    larosadgp=JSON.parse(localStorage.products)
+
     let aexis = document.getElementById('aexis')
     let proma = prompt('digite el nombre del producto a aumentar su cantidad')
-    let noex
-
-    for (let i = 0; i < larosadgp.length; i++) {
-        let condicion = larosadgp[i]['nom'].includes(proma) 
-        if (condicion) {
-            if (larosadgp[i]['nom'] == proma) {
-                let discanti = prompt('Cuanto va aumentar del producto')
-                larosadgp[i]['can']=parseInt(larosadgp[i]['can'])+ parseInt(discanti)
-                aexis.innerHTML=`Ahora la cantidad de ${proma} es de ${larosadgp[i]['can']} unidades <br>`
-                noex=false;
-                break;
-            }
-        } else {
-            noex="No existe"
-        }
-    } 
-        
-    if (noex=="No existe") {
-        aexis.innerHTML=`El producto no esta en la lista de productos  <br>`
-    }
+    let findd= larosadgp.find(elemett => elemett.nom == proma)
+    if (findd==undefined) {
+        aexis.innerHTML=`<br> El producto no esta en la lista de productos`
+    } else{
+        let morexis=parseInt(prompt('ingrese la cantidad a aumentar'))
+        findd.can=parseInt(findd.can)+parseInt(morexis)
+        aexis.innerHTML=`<br> La cantidad de ${proma} es de ${findd.can} unidades `
+   }
+    
     products=larosadgp
     console.log(products)
     localStorage.products= JSON.stringify(products)
@@ -157,26 +140,18 @@ function auexis() {
 
 // buscar un producto por nombre
 function searchp() {
+    larosadgp=JSON.parse(localStorage.products)
+
     let sear=document.getElementById('sear')
     let promb = prompt('digite el nombre del producto')
-    let noex
-
-    for (let i = 0; i < larosadgp.length; i++) {
-        let condicion = larosadgp[i]['nom'].includes(promb)
-        if (condicion) {
-            if (larosadgp[i]['nom'] == promb) {  
-                sear.innerHTML=`El producto ${larosadgp[i]['nom']} tiene: <br> Categoria ${larosadgp[i]['cat']}  <br> Precio ${larosadgp[i]['pric']}  <br>Cantidad ${larosadgp[i]['can']}  <br>`
-                noex=false;
-                break;
-            }
-        } else {
-            noex="No existe"
-        }
-    }    
-    if (noex=="No existe") {
-        sear.innerHTML=`El producto no esta en la lista de productos`
+    let findd=larosadgp.find(elemett => elemett.nom == promb)                                
+     if (findd==undefined) {
+        sear.innerHTML=`No está el producto ${promb}`
+    } else{
+        sear.innerHTML=`El producto ${findd.nom} tiene: <br> Categoria ${findd.cat}  <br> Precio ${findd.pric}  <br>Cantidad ${findd.can}  <br>`
     }
 }
+
 // eliminar un producto
 function eliminp() {
 
@@ -209,7 +184,7 @@ function eliminp() {
 function ordenp() {
     let abc=document.getElementById('abc')
     let string=""
-    larosadgp   .sort((a,b) => {
+    larosadgp.sort((a,b) => {
         const nombreA = a.nom.toLowerCase() 
         const nombreB =b.nom.toLowerCase()
         if (nombreA < nombreB) {
@@ -228,8 +203,6 @@ function ordenp() {
         string=string+JSON.stringify(larosadgp[i])+`<br>`
     }
     abc.innerHTML=`${string}`
-
-
 }
 
 
