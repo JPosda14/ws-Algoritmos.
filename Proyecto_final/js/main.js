@@ -1,0 +1,1 @@
+export const url="https://62b209abc7e53744afc6891c.mockapi.io/api/vr1/";

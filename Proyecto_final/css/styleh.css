@@ -1,0 +1,30 @@
+#logo{
+    width: 101px;
+    width: 100px;
+}
+.cover{
+    height: 400px;
+    background-image: url(https://images.unsplash.com/photo-1530629013299-6cb10d168419?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1167&q=80);
+    background-size: cover;
+    background-position: center;
+}
+#title{
+    color: azure;
+}
+
+#text{
+    color: ghostwhite;
+}
+#covco{ height: 400px;
+    background-image: url(file:///C:/Users/Asus/Desktop/ws-algoritmos/Proyecto_final/images/logo.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
+#text1{
+    color: black;
+}
+
+#title1{
+    color: black;
+}

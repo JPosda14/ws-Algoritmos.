@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colco</title>
+  <link rel="stylesheet" type="text/css" href="css/styleh.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+  <header></header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <img src="images/logo.jpeg" id="logo">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02"
+        aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="Inicio.html">Inicio
+              <span class="visually-hidden">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Colco.html">Colco</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Comprar.html">Comprar</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="cover d-flex justify-content-center align-items-center flex-column">
+    <h1 id="title">
+      Colco
+    </h1>
+    <p id="text">
+      Colchones Ortopedicos
+    </p>
+    <form action="Colco.html">
+      <button class="btn btn-outline-light" type="submit">
+        Más Informacion...
+      </button>
+    </form>
+  </div>
+  </header>
+  <section>
+    <div class="container mt-5 mb-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card">
+            <img src="images/ortopedic.jpeg" class="card-img-top" alt="Colchones">
+            <div class="card-body">
+              <h5 class="card-title">Colchon Ortopedico</h5>
+              <p class="card-text">
+                Colchones Ortopedicos al mejor precio con la mejor comodidad, para ayudar con problemas de espalda.
+              </p>
+              <input class="precios"  id="preci1" value="850000">
+              <input placeholder="ingrese la cantidad" type="number" id="Cantip1">
+              <button type="button" class="btn btn-outline-dark">Comprar</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card">
+            <img src="images/pillowtop.jpeg" class="card-img-top" alt="Colchones">
+            <div class="card-body">
+              <h5 class="card-title">Pillowtop</h5>
+              <p class="card-text">
+                Si lo que quieres es sentir como si durmieras en una nube lo mejor es el pillowtop.
+              </p>
+              <input class="precios"  id="preci2" value="1250000">
+              <input placeholder="ingrese la cantidad" type="number" id="Cantip2">
+              <button type="button" class="btn btn-outline-dark">Comprar</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card">
+            <img src="images/resort.jpeg" class="card-img-top" alt="Colchones">
+            <div class="card-body">
+              <h5 class="card-title">Resortado</h5>
+              <p class="card-text">
+                Si lo que extrañas son las camas con resortes pero antes habían muchos problemas, pues eso queda en el
+                pasado, disfruta de lo mejor en resortado.
+              </p>
+              <input class="precios"  id="preci3" value="1500000">
+              <input placeholder="ingrese la cantidad" type="number" id="Cantip3">
+              <button type="button" class="btn btn-outline-dark">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/colco.js"></script>
+</body>
+
+</html>
